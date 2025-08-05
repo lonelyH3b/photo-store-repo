@@ -1,9 +1,7 @@
 name: Update README Image
 
 env:
-  CLOUD_NAME: ${{ secrets.CLOUD_NAME }}
-  API_KEY: ${{ secrets.API_KEY }}
-  API_SECRET: ${{ secrets.API_SECRET }}
+  GH_TOKEN: ${{ secrets.GH_PAT }}
 
 on:
   schedule:
@@ -34,5 +32,9 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add destination/anime.webp
-        git commit -m ":sparkles: An anime charm joins our README! May she ward off pesky bugs! 🐛💖"
-        git push
+        if git diff --staged --quiet; then
+          echo "No changes detected, skipping commit."
+        else
+          git commit -m ":sparkles: An anime charm joins our README! May she ward off pesky bugs! 🐛💖"
+          git push
+        fi
