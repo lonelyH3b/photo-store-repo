@@ -14,12 +14,6 @@ def index():
 
 @app.route('/anime-image')
 def serve_image():
-    # timestamp = request.args.get('t', str(int(time.time())))  # Default to current timestamp
-    # image_path = "destination/anime.jpg"  # Ensure this is updated by GitHub Actions
-    # if not os.path.exists(image_path):
-    #     return "Image not found", 404
-    # return send_file(image_path, mimetype="image/jpeg")
-
     response = make_response(send_file("destination/anime.webp", mimetype='image/jpeg'))
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Pragma"] = "no-cache"
