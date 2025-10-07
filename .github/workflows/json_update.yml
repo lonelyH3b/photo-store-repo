@@ -21,8 +21,11 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Run update script
-      run: python file_update.py
+    - name: Run script for addition
+      run: python apend_json.py
+
+    - name: Run script for elimination
+      run: python eliminate_json.py
 
     - name: Commit and push changes
       run: |
