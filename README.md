@@ -255,9 +255,11 @@ For substantial changes, consider opening an issue first to discuss the proposed
 
 ## License
 
-Please refer to the repository's license file for the applicable license and usage terms.
+## License
 
-If no license file exists, add an appropriate license before presenting the project as open source.
+This project is licensed under the [MIT License](LICENSE).
+
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject to the terms and conditions of the MIT License.
 
 ---
 
